@@ -76,20 +76,37 @@ The objective of this assignment is to familiarize yourself with Docker and cont
     - **Example:** `CMD ["nginx", "-g", "daemon off;"]`
     - **Purpose:** Defines the default command that the container will run when it starts, ensuring Nginx runs in the foreground, keeping the container alive.
 
-3. **Create Bash Script**:
-   - Developed a Bash script to clone the repository whenever a new commit is detected by the Python script.
-   - Key Aspects:
-     - Clone repository upon commit detection.
-     - Perform `git pull` on the local server.
-     - Copy files to Nginx location `/var/www/html/`.
-     - Delete the cloned repository after copying.
+3. **Creating a nginx.conf file**:
+   - Developed a nginx to conf file which will define two things, one the port on which the nginx should run and second the root location where the static HMTL file shall be placed.
+     ```bash
+     server {
+         listen 80;
+         server_name localhost;
 
-4. **Integrate Scripts**:
+         location / {
+             root /usr/share/nginx/html;
+             index index.html;
+         }
+     }
+
+     ```
+ - **Key Components:**
+   - **Server Block:**
+     - `listen 80;`: Specifies that the server listens on port 80 (default HTTP port).
+     - `server_name localhost;`: The server name is set to "localhost", meaning it will respond to requests sent to this address.
+
+   - **Location Block:**
+     - `location / { ... }`: Defines the root location where requests will be served.
+     - `root /usr/share/nginx/html;`: Sets the root directory for serving files, in this case, it is `/usr/share/nginx/html`.
+     - `index index.html;`: Specifies that `index.html` will be served as the default file when accessing the root URL.
+
+
+5. **Integrate Scripts**:
    - Python script detects commits and triggers the Bash script.
    - Integration is achieved using Python’s `subprocess` library.
    - Configure the path to the Bash script in the Python script (`bash_script_path`).
 
-5. **Automate with Crontab**:
+6. **Automate with Crontab**:
    - Used crontab to run the Python script at a specified interval to detect changes and update the website.
    - Example crontab entry:
      ```bash
