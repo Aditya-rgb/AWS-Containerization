@@ -224,6 +224,30 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     ```
 
 
+#### 7. Tagging and Pushing Docker Image to Amazon ECR
+
+   - **Step 1**: The Docker image created earlier is tagged with the Amazon ECR repository URI to prepare it for pushing.
+     - Tagging the Docker Image
+     ```bash
+     sudo docker tag aditya-container:v1 <AWS-ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com/aditya-docker-nginx:v1
+     ```
+
+   - **Step 2**: Listing Docker Images
+     - The following command lists all the Docker images available on the local machine to verify the tagging.
+     ```bash
+     sudo docker images
+     ```
+
+   - **Step 3**: Pushing the Docker Image to Amazon ECR
+     - The tagged Docker image is pushed to the specified Amazon ECR repository.
+     ```bash
+     sudo docker push <AWS-ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com/aditya-docker-nginx:v1
+     ```
+
+#### Summary
+- The image `aditya-container:v1` was successfully tagged and pushed to the Amazon ECR repository `aditya-docker-nginx`.
+
+
 ## Testing Phase
 
 1. **Push Changes**:
