@@ -40,7 +40,7 @@ The objective of this assignment is to familiarize yourself with Docker and cont
 1. **Create Sample HTML Website**:
    - A sample HTML website was created in VS code and pushed to GitHub using Git commands in Git Bash.
 
-2. **Developed a Dockerfile in VS code **:
+2. **Developed a Dockerfile in VS code**:
    - A dockerfile was written with the aim to run the static HTML page on nginx exposed via port 80.
      ```bash
      # Use the official Nginx base image
@@ -59,25 +59,22 @@ The objective of this assignment is to familiarize yourself with Docker and cont
      CMD ["nginx", "-g", "daemon off;"]
      ```
 
-   - Key Components:
-     -Specifies the base image.
-      Example: FROM nginx:alpine
-      Purpose: Sets the foundation for the Docker image, in this case using Nginx with Alpine Linux.
+- **Key Components:**
+  - **Specifies the base image:**
+    - **Example:** `FROM nginx:alpine`
+    - **Purpose:** Sets the foundation for the Docker image, in this case using Nginx with Alpine Linux.
 
-     -COPY or ADD Instruction:
-      Copies files from the host machine to the Docker image.
-      Example: COPY ./index.html /usr/share/nginx/html/index.html
-      Purpose: Adds files (like index.html) to Nginx’s directory for serving content.
+  - **COPY or ADD Instruction:**
+    - **Example:** `COPY ./index.html /usr/share/nginx/html/index.html`
+    - **Purpose:** Copies files from the host machine to the Docker image, such as adding the `index.html` file to Nginx’s directory for serving content.
 
-     -EXPOSE Instruction:
-      Defines the port the container will listen on.
-      Example: EXPOSE 80
-      Purpose: Makes port 80 available for HTTP traffic, allowing Nginx to serve requests.
+  - **EXPOSE Instruction:**
+    - **Example:** `EXPOSE 80`
+    - **Purpose:** Defines the port the container will listen on, making port 80 available for HTTP traffic to allow Nginx to serve requests.
 
-     -CMD or ENTRYPOINT Instruction:
-      Defines the default command that the container will run when it starts.
-      Example: CMD ["nginx", "-g", "daemon off;"]
-      Purpose: Ensures that Nginx starts running in the foreground, keeping the container alive.
+  - **CMD or ENTRYPOINT Instruction:**
+    - **Example:** `CMD ["nginx", "-g", "daemon off;"]`
+    - **Purpose:** Defines the default command that the container will run when it starts, ensuring Nginx runs in the foreground, keeping the container alive.
 
 3. **Create Bash Script**:
    - Developed a Bash script to clone the repository whenever a new commit is detected by the Python script.
