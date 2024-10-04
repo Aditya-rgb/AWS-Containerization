@@ -195,7 +195,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     sudo docker ps
     ```
 
-#%## 5. Install AWS CLI
+#### 5. Install AWS CLI
 
 - **Step 1**: Install AWS CLI.
   - Use the following command to install the AWS CLI:
@@ -209,7 +209,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     aws configure
     ```
 
-### 4. Log in to Amazon ECR
+#### 6. Log in to Amazon ECR
 
 - **Step 1**: Get the login password for ECR.
   - Retrieve the login password using the command below:
