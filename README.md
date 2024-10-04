@@ -168,7 +168,61 @@ sudo systemctl enable docker
 git clone https://github.com/Aditya-rgb/AWS-Containerization.git
 
 ```
-### 4. 
+ 
+#### 4. Build Docker Container and Run
+
+- **Step 1**: Build the Docker container.
+  - Run the following command to build the Docker image with the tag `aditya-container:v1`:
+    ```bash
+    sudo docker build -t aditya-container:v1 .
+    ```
+
+- **Step 2**: List Docker images.
+  - Check the available Docker images by executing:
+    ```bash
+    sudo docker images
+    ```
+
+- **Step 3**: Run the Docker container.
+  - Execute the command below to run the container in detached mode, mapping port 3000 on the host to port 80 on the container:
+    ```bash
+    sudo docker run -d -p 3000:80 -t aditya-container:v1
+    ```
+
+- **Step 4**: List running Docker containers.
+  - To view the currently running Docker containers, use:
+    ```bash
+    sudo docker ps
+    ```
+
+#%## 5. Install AWS CLI
+
+- **Step 1**: Install AWS CLI.
+  - Use the following command to install the AWS CLI:
+    ```bash
+    sudo snap install aws-cli --classic
+    ```
+
+- **Step 2**: Configure AWS CLI.
+  - Set up the AWS CLI with your credentials by running:
+    ```bash
+    aws configure
+    ```
+
+### 4. Log in to Amazon ECR
+
+- **Step 1**: Get the login password for ECR.
+  - Retrieve the login password using the command below:
+    ```bash
+    PASSWORD=$(aws ecr get-login-password --region us-west-2)
+    ```
+
+- **Step 2**: Log in to Docker with sudo.
+  - If required, log in again using sudo:
+    ```bash
+    echo $PASSWORD | sudo docker login --username AWS --password-stdin <AWS-ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com
+    ```
+
 
 ## Testing Phase
 
