@@ -41,7 +41,9 @@ The objective of this assignment is to familiarize yourself with Docker and cont
    - A sample HTML website was created in VS code and pushed to GitHub using Git commands in Git Bash.
 
 2. **Developed a Dockerfile in VS code**:
+   
    - A dockerfile was written with the aim to run the static HTML page on nginx exposed via port 80.
+     
      ```bash
      # Use the official Nginx base image
      FROM nginx:alpine
@@ -77,6 +79,7 @@ The objective of this assignment is to familiarize yourself with Docker and cont
     - **Purpose:** Defines the default command that the container will run when it starts, ensuring Nginx runs in the foreground, keeping the container alive.
 
 3. **Creating a nginx.conf file**:
+   
    - Developed a nginx to conf file which will define two things, one the port on which the nginx should run and second the root location where the static HMTL file shall be placed.
      
      ```bash
