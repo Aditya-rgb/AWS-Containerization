@@ -113,7 +113,7 @@ The objective of this assignment is to familiarize yourself with Docker and cont
 
 #### AWS EC2 Setup and CI/CD Pipeline Deployment
 
-#### Steps to Initialize the AWS EC2 Instance and Deploy the CI/CD Pipeline:
+#### Steps to Initialize the AWS EC2 Instance and Deploying all the docker files which are Dockerfile, nginx.conf, index.html :
 
 #### 1. Launch EC2 Instance
 
@@ -130,7 +130,7 @@ The objective of this assignment is to familiarize yourself with Docker and cont
   - Selected **64-bit (arm)** architecture.
 
 - **Step 5**: Choose Instance Type.
-  - Chose **t4g.micro** for this case.
+  - Chose **t4g.nano** for this case.
 
 - **Step 6**: Configure Key Pair.
   - Set up key-pair login for the EC2 instance (download the `.pem` file for future access).
@@ -152,23 +152,20 @@ The objective of this assignment is to familiarize yourself with Docker and cont
 
 - **Note**: Downloaded the key pair (`.pem` file) for future access.
 
-#### 2. Install Nginx on AWS EC2 Instance
+#### 2. Installing docker on AWS EC2 Instance
 
 Run the following commands on the EC2 instance:
 
 ```bash
 sudo apt-get update
-sudo apt-get install nginx
-sudo service nginx start
-sudo service nginx status
+sudo apt install docker.io -y
+sudo systemctl start docker
+sudo systemctl enable docker
 ```
 
-Now, Copy the PublicIPs of the EC2 instance and paste it in your browser. A default nginx web-page shall appear...
-
-
-#### 3. Cloned the CI-CD git repository on EC2 instance
+#### 3. Cloned the AWS-Containerization git repository on EC2 instance
 ```bash
-git clone https://github.com/Aditya-rgb/CI-CD-Pipeline.git
+git clone 
 
 ```
    
