@@ -310,7 +310,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
 2. **Checked Nginx Logs**:
    - Access the logs to ensure there are no errors during startup:
    ```bash
-   docker logs <container_id>
+   sudo docker logs 6e5df0f3f270
    ```
    ![Alt Text](/images/15-docker-logs.JPG)
    
