@@ -188,6 +188,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     ```bash
     sudo docker run -d -p 3000:80 -t aditya-container:v1
     ```
+  - Before testing the public IP on browser, go to security options of your EC2 instance and edit the inbound rule to hear from port 3000 too.
 
 - **Step 4**: List running Docker containers.
   - To view the currently running Docker containers, use:
