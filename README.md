@@ -276,6 +276,9 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
      ```
 
    ![Alt Text](/images/12-docker-tag-push-to-ecr.JPG)
+   
+
+   ![Alt Text](/images/18-docker-image-in-ecr.JPG)
 
 
    - **Step 4**: Please find the Private repository AWS ECR link below along with the attached SS for it
