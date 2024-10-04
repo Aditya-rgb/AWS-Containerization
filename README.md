@@ -252,6 +252,17 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
      sudo docker push <AWS-ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com/aditya-docker-nginx:v1
      ```
 
+   - **Step 4**: Please find the Private repository AWS ECR link below along with the attached SS for it
+     - AWS ECR private repo URL.
+     ```bash
+     975050024946.dkr.ecr.us-west-2.amazonaws.com/aditya-docker-nginx
+     # OR
+     IMG URL - 975050024946.dkr.ecr.us-west-2.amazonaws.com/aditya-docker-nginx:v1
+     # OR
+     https://us-west-2.console.aws.amazon.com/ecr/repositories/private/975050024946/aditya-docker-nginx?region=us-west-2
+
+     # NOTE : Couldn't push to public repo due to some IAM policy error. Kindly Consider
+
 ## Testing Phase
 
 ### Accessing the Application
