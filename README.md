@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The objective of this assignment is to familiarize yourself with Docker and containerization by Dockerizing a simple HTML page using Nginx as the web server.
+The objective of this assignment is to gain hands-on experience with AWS EC2 and ECR by containerizing a simple HTML page using Docker and deploying it with Nginx as the web server.
 
 ## Prerequisites
 
