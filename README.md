@@ -152,11 +152,14 @@ The objective of this assignment is to familiarize yourself with Docker and cont
 
 - **Note**: Downloaded the key pair (`.pem` file) for future access.
 
+![Alt Text](/images/1-docker-ec2-setup.JPG)
+
 #### 2. Creating a Repository in AWS ECR
 
 Find the attached SS for the same
 
 
+![Alt Text](/images/17-docker-ecr-repo-creation.JPG)
 
 
 #### 3. Installing docker on AWS EC2 Instance
@@ -170,11 +173,16 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
+![Alt Text](/images/4-docker-install-ec2.JPG)
+
+![Alt Text](/images/5-docker-start-enable-directory-structure.JPG)
+
 #### 4. Cloned the AWS-Containerization git repository on EC2 instance
 ```bash
 git clone https://github.com/Aditya-rgb/AWS-Containerization.git
 
 ```
+![Alt Text](/images/3-docker-git-clone.JPG)
  
 #### 5. Build Docker Container and Run
 
@@ -184,24 +192,35 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     sudo docker build -t aditya-container:v1 .
     ```
 
+    ![Alt Text](/images/6-docker-build-command-success.JPG)
+
 - **Step 2**: List Docker images.
   - Check the available Docker images by executing:
     ```bash
     sudo docker images
     ```
+    ![Alt Text](/images/7-docker-docerimages-command.JPG)
 
 - **Step 3**: Run the Docker container.
   - Execute the command below to run the container in detached mode, mapping port 3000 on the host to port 80 on the container:
     ```bash
     sudo docker run -d -p 3000:80 -t aditya-container:v1
     ```
+    
+   ![Alt Text](/images/8-docker-run-docker-ps-command.JPG)
+    
   - Before testing the public IP on browser, go to security options of your EC2 instance and edit the inbound rule to hear from port 3000 too.
+
+   ![Alt Text](/images/14-docker-ec2-security-group.JPG)
+    
 
 - **Step 4**: List running Docker containers.
   - To view the currently running Docker containers, use:
     ```bash
     sudo docker ps
     ```
+  
+  ![Alt Text](/images/8-docker-run-docker-ps-command.JPG)
 
 #### 6. Install AWS CLI
 
@@ -211,11 +230,15 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     sudo snap install aws-cli --classic
     ```
 
+   ![Alt Text](/images/9-docker-install-command.JPG)
+
 - **Step 2**: Configure AWS CLI.
   - Set up the AWS CLI with your credentials by running:
     ```bash
     aws configure
     ```
+  ![Alt Text](/images/10-aws-configure.JPG)
+  
 
 #### 7. Log in to Amazon ECR
 
@@ -226,11 +249,11 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     ```
 
 - **Step 2**: Log in to Docker with sudo.
-  - If required, log in again using sudo:
+  - If required, log in using sudo:
     ```bash
     echo $PASSWORD | sudo docker login --username AWS --password-stdin <AWS-ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com
     ```
-
+    ![Alt Text](/images/11-docker-ecr-login.JPG)
 
 #### 8. Tagging and Pushing Docker Image to Amazon ECR
 
@@ -252,6 +275,9 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
      sudo docker push <AWS-ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com/aditya-docker-nginx:v1
      ```
 
+   ![Alt Text](/images/12-docker-tag-push-to-ecr.JPG)
+
+
    - **Step 4**: Please find the Private repository AWS ECR link below along with the attached SS for it
      - AWS ECR private repo URL.
      ```bash
@@ -262,6 +288,10 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
      https://us-west-2.console.aws.amazon.com/ecr/repositories/private/975050024946/aditya-docker-nginx?region=us-west-2
 
      # NOTE : Couldn't push to public repo due to some IAM policy error. Kindly Consider
+     ```
+     ![Alt Text](/images/17-docker-ecr-repo-creation.JPG)
+  
+     
 
 ## Testing Phase
 
@@ -271,16 +301,25 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
    - Opened a web browser and navigated to IP address http://35.88.28.2:3000/
    - Verified that the HTML page loads correctly without errors.
 
+   ![Alt Text](/images/13-docker-public-ip-test.JPG)
+
+    
 2. **Checked Nginx Logs**:
    - Access the logs to ensure there are no errors during startup:
    ```bash
    docker logs <container_id>
    ```
+   ![Alt Text](/images/15-docker-logs.JPG)
+   
+   
 3. **Test HTTP response**:
    - Used curl to test the HTTP response:
    ```bash
    curl -I http://35.88.28.2:3000/
    ```
+   
+   ![Alt Text](/images/16-docker-curl-command.JPG)
+   
 
 ## Summary
 - The image `aditya-container:v1` was successfully tagged and pushed to the Amazon ECR repository `aditya-docker-nginx`.
