@@ -105,17 +105,9 @@ The objective of this assignment is to familiarize yourself with Docker and cont
      - `index index.html;`: Specifies that `index.html` will be served as the default file when accessing the root URL.
 
 
-5. **Integrate Scripts**:
-   - Python script detects commits and triggers the Bash script.
-   - Integration is achieved using Python’s `subprocess` library.
-   - Configure the path to the Bash script in the Python script (`bash_script_path`).
+4. **Push to Github repository**:
+   - All the three files were to pushed to this repository.
 
-6. **Automate with Crontab**:
-   - Used crontab to run the Python script at a specified interval to detect changes and update the website.
-   - Example crontab entry:
-     ```bash
-     */10 * * * * /usr/bin/python3 /path/to/your/deployment.py >> /path/to/your/logfile.log 2>&1
-     ```
 
 ## Deployment Phase
 
