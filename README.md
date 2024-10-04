@@ -152,7 +152,14 @@ The objective of this assignment is to familiarize yourself with Docker and cont
 
 - **Note**: Downloaded the key pair (`.pem` file) for future access.
 
-#### 2. Installing docker on AWS EC2 Instance
+#### 2. Creating a Repository in AWS ECR
+
+Find the attached SS for the same
+
+
+
+
+#### 3. Installing docker on AWS EC2 Instance
 
 Run the following commands on the EC2 instance:
 
@@ -163,13 +170,13 @@ sudo systemctl start docker
 sudo systemctl enable docker
 ```
 
-#### 3. Cloned the AWS-Containerization git repository on EC2 instance
+#### 4. Cloned the AWS-Containerization git repository on EC2 instance
 ```bash
 git clone https://github.com/Aditya-rgb/AWS-Containerization.git
 
 ```
  
-#### 4. Build Docker Container and Run
+#### 5. Build Docker Container and Run
 
 - **Step 1**: Build the Docker container.
   - Run the following command to build the Docker image with the tag `aditya-container:v1`:
@@ -196,7 +203,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     sudo docker ps
     ```
 
-#### 5. Install AWS CLI
+#### 6. Install AWS CLI
 
 - **Step 1**: Install AWS CLI.
   - Use the following command to install the AWS CLI:
@@ -210,7 +217,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     aws configure
     ```
 
-#### 6. Log in to Amazon ECR
+#### 7. Log in to Amazon ECR
 
 - **Step 1**: Get the login password for ECR.
   - Retrieve the login password using the command below:
@@ -225,7 +232,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
     ```
 
 
-#### 7. Tagging and Pushing Docker Image to Amazon ECR
+#### 8. Tagging and Pushing Docker Image to Amazon ECR
 
    - **Step 1**: The Docker image created earlier is tagged with the Amazon ECR repository URI to prepare it for pushing.
      - Tagging the Docker Image
