@@ -165,20 +165,10 @@ sudo systemctl enable docker
 
 #### 3. Cloned the AWS-Containerization git repository on EC2 instance
 ```bash
-git clone 
+git clone https://github.com/Aditya-rgb/AWS-Containerization.git
 
 ```
-   
-- Copied the deployment.py and cloning.sh to different directory in the EC2 instance.
-- Made the config changes and the path location changes in the deployment.py
-- Gave chmod +x (executable) permissions to the bash script responsible for cloning or pulling and copy pasting the sample HTML code file to nginx location.
-- Made a small commit on github for the deployment.py to detect the commit made.
-  
-```bash
-python3 deployment.py
-```   
-   
-Did a refresh to the public IP of the EC2 instance on the web browser and the website got rendered successfully :)
+### 4. 
 
 ## Testing Phase
 
