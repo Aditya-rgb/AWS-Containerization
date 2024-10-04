@@ -111,7 +111,7 @@ The objective of this assignment is to familiarize yourself with Docker and cont
 
 ## Deployment Phase
 
-#### AWS EC2 Setup and CI/CD Pipeline Deployment
+#### AWS EC2 Setup for running the Docker containers and pushing to AWS ECR
 
 #### Steps to Initialize the AWS EC2 Instance and Deploying all the docker files which are Dockerfile, nginx.conf, index.html :
 
