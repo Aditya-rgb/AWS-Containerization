@@ -245,88 +245,29 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
      sudo docker push <AWS-ACCOUNT-ID>.dkr.ecr.us-west-2.amazonaws.com/aditya-docker-nginx:v1
      ```
 
-#### Summary
-- The image `aditya-container:v1` was successfully tagged and pushed to the Amazon ECR repository `aditya-docker-nginx`.
-
-
 ## Testing Phase
 
-1. **Push Changes**:
-   - Introduce a small change in the HTML code and push it to GitHub.
+### Accessing the Application
 
-2. **Run Python Script**:
-   - Execute `deployment.py` to detect the commit:
-     ```bash
-     python3 deployment.py
-     ```
+1. **Open the Application**:
+   - Opened a web browser and navigated to IP address http://35.88.28.2:3000/
+   - Verified that the HTML page loads correctly without errors.
 
-3. **Verify Bash Script Execution**:
-   - The Bash script should clone the repository, pull the latest changes, and update the Nginx location `/var/www/html/`by copying the smaple HTML project files to this location.
+2. **Checked Nginx Logs**:
+   - Access the logs to ensure there are no errors during startup:
+   ```bash
+   docker logs <container_id>
+   ```
+3. **Test HTTP response**:
+   - Used curl to test the HTTP response:
+   ```bash
+   curl -I http://35.88.28.2:3000/
+   ```
 
-4. **Check Nginx Status**:
-   - Verify Nginx status:
-     ```bash
-     sudo systemctl status nginx
-     ```
-   - Obtain the server IP address:
-     ```bash
-     ifconfig
-     ```
+## Summary
+- The image `aditya-container:v1` was successfully tagged and pushed to the Amazon ECR repository `aditya-docker-nginx`.
 
-5. **Verify Website**:
-   - Open the IP address in a web browser to check if the website is rendered correctly.
-   - Repeat steps 2-7 to ensure updates are applied after each commit.
-
-## Automation
-
-1. **Setup Cron Job**:
-   - Automate the workflow using cron job on the local Linux system or AWS EC2 instance.
-   - Edit crontab:
-     ```bash
-     crontab -e
-     ```
-   - Add cron job entry:
-     ```bash
-     */10 * * * * /usr/bin/python3 /path/to/your/deployment.py >> /path/to/your/logfile.log 2>&1
-     ```
-
-2. **Confirm Automation**:
-   - Ensure the cron job is correctly set up and the process runs as expected.
-   - The final outcome is automatic updates to the website with each commit made to the GitHub repository.
-
-
-
-## Troubleshooting
-
-If you encounter issues, here are some common troubleshooting steps:
-
-1. **Nginx not starting:**
-   - Ensure the service is installed and running.
-     ```bash
-     sudo service nginx start
-     sudo service nginx status
-     ```
-   - Check if port 80 is already in use.
-     ```bash
-     sudo lsof -i:80
-     ```
-
-2. **Public IP not working:**
-   - Confirm that your security group allows inbound traffic on HTTP (port 80) and HTTPS (port 443).
-   - Double-check that Nginx is running and serving your application.
-
-3. **GitHub repository not cloning:**
-   - Make sure that the EC2 instance has internet access and that Git is installed.
-     ```bash
-     sudo apt-get install git
-     ```
-
-4. **Website not updating after a new commit:**
-   - Ensure that the `deployment.py` script is running correctly.
-   - Verify the `cloning.sh` script has executable permissions.
-   - Check the cron job or automation settings if applicable.
-
-
+  
 ## Contributing
 
 We welcome contributions! To contribute:
@@ -344,7 +285,7 @@ Make sure to follow the code style guidelines and include proper documentation f
 For any queries, feel free to contact me:
 
 - **Email:** adityavakharia@gmail.com
-- **GitHub:** [Aditya-rgb](https://github.com/Aditya-rgb)
+- **GitHub:** [Aditya-rgb]()
 
 You can also open an issue in the repository for questions or suggestions.
 
