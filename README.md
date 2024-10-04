@@ -78,6 +78,7 @@ The objective of this assignment is to familiarize yourself with Docker and cont
 
 3. **Creating a nginx.conf file**:
    - Developed a nginx to conf file which will define two things, one the port on which the nginx should run and second the root location where the static HMTL file shall be placed.
+     
      ```bash
      server {
          listen 80;
