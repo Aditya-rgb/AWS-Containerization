@@ -290,7 +290,7 @@ git clone https://github.com/Aditya-rgb/AWS-Containerization.git
      # OR
      https://us-west-2.console.aws.amazon.com/ecr/repositories/private/975050024946/aditya-docker-nginx?region=us-west-2
 
-     # NOTE : Couldn't push to public repo due to some IAM policy error. Kindly Consider
+     # NOTE : Couldn't push to public repo due to some IAM policy error. 
      ```
      ![Alt Text](/images/17-docker-ecr-repo-creation.JPG)
   
